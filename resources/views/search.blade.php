@@ -23,8 +23,6 @@
 
                 @if ($errors->first('sbd'))
                     <p class="text-danger">{{ $errors->first('sbd') }}</p>
-                @elseif (session('notFound'))
-                    <p class="text-danger">{{ session('notFound') }}</p>
                 @endif
             </form>
         </div>

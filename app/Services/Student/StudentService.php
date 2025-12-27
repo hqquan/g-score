@@ -4,6 +4,7 @@ namespace App\Services\Student;
 
 use App\Models\Student;
 use App\Repositories\Student\StudentRepositoryInterface;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class StudentService implements StudentServiceInterface
 {
@@ -18,7 +19,7 @@ class StudentService implements StudentServiceInterface
         $student = $this->studentRepository->findBySbd($sbd);
 
         if (!$student) {
-            throw new \Exception("Student with SBD {$sbd} not found.");
+            throw new ModelNotFoundException("Student with SBD {$sbd} not found.");
         }
         return $student;
     }
