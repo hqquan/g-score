@@ -83,6 +83,6 @@ class StudentSeeder extends Seeder
     {
         $value = trim($value);
 
-        return $value === null ? null : (float) $value;
+        return $value === '' ? null : (float) $value;
     }
 }
